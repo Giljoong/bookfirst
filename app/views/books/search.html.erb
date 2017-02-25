@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Books</h1>
+<%=form_tag 'books/search'%>
+<input type="text" name="search" placeholder="검색"/>
+<button type="submit">검색</button>
+<%end%>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Avatar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.content %></td>
+        <td><%= book.avatar %></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <%= link_to "All Books", books_path,  %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New Book", new_book_path %>

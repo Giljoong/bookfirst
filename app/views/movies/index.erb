@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Archive</title>
+        <style>
+            h1{margin-left:20px; color:#8b4513;}
+            .dec{margin-left:20px; margin-top:15px; margin-bottom:15px;}
+            .wrt{margin-left:300px; margin-top:30px; margin-bottom:15px;}
+            .table{margin-top:15px;} 
+        </style>
+    </head>
+    <body>
+      <H1>오늘의 영화 ARCHIVE</H1>
+      <p class=dec>오늘 당신이 본 영화는 어땠나요?</p>
+      
+      <table class="table">
+        <div class=top>
+          <tr>
+              <th>제목</th>
+              <th>감독</th>
+              <th>평가</th>
+          </tr>
+        </div>
+        <div class=content>
+          <%@docs.each do |a|%>
+          <tr>
+              <td><a href="/movies/<%=a.id%>"><%=a.title%></a></td>
+              <td><%=a.director%></td>
+              <td><%=a.rank%></td>
+          </tr>
+          <%end%>
+        </div>
+      </table><br/>
+      <a class="wrt" href="/movies/new">글쓰기</a>
+    </body>
+</html>

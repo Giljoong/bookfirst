@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Archive</title>
+        <style>
+            .btn{margin-left:200px;} h1{margin-left:20px;}
+            .dec{margin-left:20px; margin-top:15px; margin-bottom:15px;}
+            .title{margin-left:30px;} .choice{margin-left:30px;}
+            .wrt{margin-left:300px; margin-top:10px; margin-bottom:15px;}
+        </style>
+    </head>
+    <body>
+      <H1>오늘의 영화 ARCHIVE</H1>
+      <p class=dec>나의 오늘 영화 경험은?</p><br/>
+          <h2 class=title>제목 : <%=@doc.title%></h2><br/>
+          <h2 class=title>감독 : <%=@doc.director%></h2><br/>
+          
+          <h2 class=title>평점 : <%=@doc.rank%></h2>
+          <br/>
+       <p class=wrt><a href="/movies/<%=@doc.id%>/edit">수정하기</a></p>
+       <p class=wrt><a href="/movies/<%=@doc.id%>/destroy" data-method="delete">삭제하기</a></P>
+       <p class=wrt><a href="/movies/index">목록으로</a></p>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Archive</title>
+        <style>
+            .btn{margin-left:200px;} h1{margin-left:20px;}
+            .dec{margin-left:20px; margin-top:15px; margin-bottom:15px;}
+            .title{margin-left:30px;} .choice{margin-left:30px;}
+            .avatar{margin-top:100px;}
+        </style>
+    </head>
+    <body>
+      <H1>[NEW] 오늘의 영화 ARCHIVE</H1>
+      <p class=dec>오늘 당신이 본 영화는 어땠나요?</p>
+       <%= form_tag '/movies/create' do%>
+        <form class=movie action="/movies/create" method=post>
+          <label class=title>
+              제목 <input id="title" type="text" name="title"/><br/>
+          </label>
+          <label class=title>  
+              감독 <input id="director" type="text" name="director"/><br/>
+          </label><br/>
+          <label class=choice>
+              <input type="radio" name="rank" value="최고에요"/> 최고에요<br/>
+          </label>
+          <label class=choice>
+              <input type="radio" name="rank" value="볼만해요"/> 볼만해요<br/>
+          </label>
+          <label class=choice>
+              <input type="radio" name="rank" value="보통이에요"/> 보통이에요<br/>
+          </label>  
+          <label class=choice>  
+              <input type="radio" name="rank" value="그저그래요"/> 그저그래요<br/>
+          </label>
+          <label class=choice>
+              <input type="radio" name="rank" value="별로에요"/> 별로에요<br/>
+          </label>
+          <input class="btn" type="submit"/>
+        </form>
+    <div class="avatar">
+        <label for="avatar">
+        <input id="avtar" name="avatar" type="file"/>
+        <input type="submit">
+    </div>
+        </label>
+      <%end%>
+    </body>
+</html>
